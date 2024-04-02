@@ -1,11 +1,13 @@
 ---
 import Icon from './Icon.astro';
 const currentYear = new Date().getFullYear();
+const URLpath = Astro.url.host
 ---
 
 <footer>
 	<div class="group">
-		<p>&copy; {currentYear} mojca.is
+		<p><span class="reversed">&copy;</span> {currentYear}
+			<a href={URLpath}>{URLpath}</a>
 			using <a href="https://astro.build/">Astro</a>
 			<Icon icon="rocket-launch" size="1.2em" />
 		</p>
@@ -36,6 +38,13 @@ const currentYear = new Date().getFullYear();
 		text-decoration-color: currentColor;
 	}
 
+	.reversed {
+		display: inline-block;
+		position: relative;
+		bottom: 0.04em;
+		transform: rotate(180deg)
+	}
+
 	.group {
 		display: flex;
 		flex-direction: column;
@@ -44,16 +53,16 @@ const currentYear = new Date().getFullYear();
 
 	@media (min-width: 50em) {
 		footer {
-			flex-direction: row;
+			//flex-direction: row;
 			justify-content: space-between;
 			padding: 2.5rem 5rem;
 		}
 
 		.group {
-			flex-direction: row;
+			//flex-direction: row;
 			gap: 1rem;
 			flex-wrap: wrap;
 		}
-
 	}
+
 </style>

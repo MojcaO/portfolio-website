@@ -6,14 +6,14 @@ import type { iconPaths } from './IconPaths';
 /** Main menu items - TODO: mark as active when on redirected url too */
 const textLinks: { label: string; href: string }[] = [
 	{ label: 'Home', href: '/' },
-	{ label: 'CV', href: '/CV/' }
-	//,{ label: 'About', href: '/about/' },
+	{ label: 'CV', href: '/cv' },
 ];
 
 /** Icon links to social media */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
 	{ label: 'GitHub', href: 'https://github.com/MojcaO', icon: 'github-logo' },
 	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/mojca-orgulan-631764283/', icon: 'linkedin-logo' },
+	{ label: 'E-mail', href: 'mailto:mojca.org+hi@gmail.com', icon: 'at' }
 ];
 ---
 
@@ -70,7 +70,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			</div>
 		</div>
 	</noscript>
-	<div id="menu-content">
+	<div id="menu-content" hidden>
 		<ul class="nav-items">
 			{
 				textLinks.map(({ label, href }) => (
@@ -162,7 +162,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		display: flex;
 		justify-content: space-between;
 		gap: 0.5rem;
-		padding: 1.5rem;
+		padding: 1.5rem 10%;
 	}
 
 	.site-title {
@@ -277,10 +277,10 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	@media (min-width: 50em) {
 		nav {
 			display: grid;
-			grid-template-columns: 1fr auto 1fr;
+			grid-template-columns: auto 1px 15rem;
 			align-items: center;
-			padding: 2.5rem 5rem;
-			gap: 1rem;
+			padding: 2.5rem 25%;
+			gap: 0.02rem;
 		}
 
 		.menu-header {
@@ -336,7 +336,6 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 		.menu-footer {
 			--icon-padding: 0.375rem;
-
 			justify-self: flex-end;
 			align-items: center;
 			padding: 0;
@@ -345,17 +344,16 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		}
 
 		.socials {
-			display: none;
+			//display: none;
 		}
-	}
 
-	@media (min-width: 60em) {
 		.socials {
 			display: flex;
 			justify-content: flex-end;
 			gap: 0;
 		}
 	}
+
 	@media (forced-colors: active) {
 		.link.active {
 			color: SelectedItem;
