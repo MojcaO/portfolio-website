@@ -1,10 +1,24 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Hero from "../../components/Hero.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import Icon from "../../components/Icon.astro";
 ---
 
 <Layout title="Mojca Orgulan | Portfolio">
-    <main>
+    <div class="stack gap-20 lg:gap-48">
+        <header class="hero">
+            <div class="wrapper stack gap-8 lg:gap-10">
+                <Hero title="Hi! I'm Mojca."
+                      tagline="I'm interested in software development, data science, and collecting random bits of trivia. I'm always open to new ideas and projects." />
 
-    </main>
+
+                <CallToAction href="mailto:mojca.org+hi@gmail.com" >
+                    Contact me
+                    <Icon icon="paper-plane-tilt" size="1.2em" />
+                </CallToAction>
+            </div>
+        </header>
+        <main></main>
+    </div>
 </Layout>
-
