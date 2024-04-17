@@ -162,7 +162,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		display: flex;
 		justify-content: space-between;
 		gap: 0.5rem;
-		padding: 1.5rem 10%;
+		padding: 1.5rem;
 	}
 
 	.site-title {
@@ -212,7 +212,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	}
 
 	.nav-items {
-		visibility: hidden;
+		//visibility: hidden;
 		margin: 0;
 		display: flex;
 		flex-direction: column;
@@ -277,7 +277,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	@media (min-width: 50em) {
 		nav {
 			display: grid;
-			grid-template-columns: auto 1px 15rem;
+			grid-template-columns: 12rem 10rem 12rem;
 			align-items: center;
 			padding: 2.5rem 25%;
 			gap: 0.02rem;
@@ -299,21 +299,21 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			position: relative;
 			flex-direction: row;
 			font-size: var(--text-sm);
-			border-radius: 999rem;
+			//border-radius: 999rem;
 			border: 0;
 			padding: 0.5rem 0.5625rem;
-			background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
-			box-shadow: var(--shadow-md);
+			//background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
+			//box-shadow: var(--shadow-md);
 		}
 
-		.nav-items::before {
+		/*.nav-items::before {
 			position: absolute;
 			inset: -1px;
 			content: '';
 			background: var(--gradient-stroke);
 			border-radius: 999rem;
 			z-index: -1;
-		}
+		}*/
 
 		.link {
 			padding: 0.5rem 1rem;

@@ -2,11 +2,12 @@
 interface Props {
 	href: string;
 }
-
 const { href } = Astro.props;
 ---
 
-<a href={href}><slot /></a>
+<div class="buttonCTA">
+    <a href={href}><slot /></a>
+</div>
 
 <style>
 	a {
@@ -28,9 +29,26 @@ const { href } = Astro.props;
 
 	@media (min-width: 20em) {
 		a {
+            display:  flex;
 			font-size: var(--text-lg);
-		}
+
+        }
+
+        .buttonCTA {
+            //width: 100%;
+            max-width: 16rem;
+            //margin-inline: auto;
+            padding-inline: 1.8rem;
+        }
 	}
+
+    @media (min-width: 50em) {
+        a {
+            display: flex;
+            padding: 1.125rem 2.5rem;
+            font-size: var(--text-xl);
+        }
+    }
 
 	/* Overlay for hover effects. */
 	a::after {
@@ -47,10 +65,11 @@ const { href } = Astro.props;
 		background-color: hsla(var(--gray-999-basis), 0.3);
 	}
 
-	@media (min-width: 50em) {
-		a {
-			padding: 1.125rem 2.5rem;
-			font-size: var(--text-xl);
-		}
-	}
+    .buttonCTA {
+        //width: 100%;
+        max-width: 22rem;
+        margin-inline: auto;
+        //padding-inline: -4rem;
+    }
+
 </style>

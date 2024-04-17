@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from "../../components/Hero.astro";
 import CallToAction from "../../components/CallToAction.astro";
 import Icon from "../../components/Icon.astro";
+import ContactCTA from "../../components/ContactCTA.astro";
 ---
 
 <Layout title="Mojca Orgulan | Portfolio">
@@ -11,14 +12,16 @@ import Icon from "../../components/Icon.astro";
             <div class="wrapper stack gap-8 lg:gap-10">
                 <Hero title="Hi! I'm Mojca."
                       tagline="I'm interested in software development, data science, and collecting random bits of trivia. I'm always open to new ideas and projects." />
-
-
-                <CallToAction href="mailto:mojca.org+hi@gmail.com" >
-                    Contact me
-                    <Icon icon="paper-plane-tilt" size="1.2em" />
-                </CallToAction>
+                <div class="wrapper">
+                    <CallToAction href="mailto:mojca.org+hi@gmail.com" >
+                        Contact me
+                        <Icon icon="paper-plane-tilt" size="1.2em" />
+                    </CallToAction>
+                </div>
             </div>
         </header>
-        <main></main>
+        <main>
+            <ContactCTA href="">Test</ContactCTA>
+        </main>
     </div>
 </Layout>
